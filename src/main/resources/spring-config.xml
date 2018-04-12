@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="engineV8" class="com.netcracker.adlitsov.spring.EngineV8" />
+    <bean id="engineV16" class="com.netcracker.adlitsov.spring.EngineV16" />
+    <bean id="turboEngine" class="com.netcracker.adlitsov.spring.TurboEngine" />
+
+    <bean id="bmwX5" class="com.netcracker.adlitsov.spring.Car" />
+</beans>
