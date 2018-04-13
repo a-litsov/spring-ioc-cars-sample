@@ -9,21 +9,18 @@ public class Car {
     }
 
     public Car(Engine engine) {
-        System.out.println("Car.Car");
+        System.out.println("Car.Car with engine");
         this.engine = engine;
     }
 
-    public Engine getEngine() {
-        return engine;
-    }
-
     public void setEngine(Engine engine) {
+        System.out.println("Car.setEngine");
         this.engine = engine;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "Car#" + System.identityHashCode(this) + " {" +
                 "engine=" + engine +
                 '}';
     }

@@ -1,6 +1,6 @@
 package com.netcracker.adlitsov.spring;
 
-public class EngineV8 implements Engine {
+public class EngineV8 extends Engine {
 
     public EngineV8() {
         System.out.println("EngineV8.EngineV8");

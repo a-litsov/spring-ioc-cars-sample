@@ -1,6 +1,6 @@
 package com.netcracker.adlitsov.spring;
 
-public class TurboEngine implements Engine {
+public class TurboEngine extends Engine {
     public TurboEngine() {
         System.out.println("TurboEngine.TurboEngine");
     }

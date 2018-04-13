@@ -7,5 +7,21 @@
     <bean id="engineV16" class="com.netcracker.adlitsov.spring.EngineV16" />
     <bean id="turboEngine" class="com.netcracker.adlitsov.spring.TurboEngine" />
 
-    <bean id="bmwX5" class="com.netcracker.adlitsov.spring.Car" />
+    <!-- constructor based instantiations -->
+    <bean id="kalina" class="com.netcracker.adlitsov.spring.Car">
+        <constructor-arg index="0" ref="engineV8" />
+    </bean>
+
+    <bean id="bmwX5" class="com.netcracker.adlitsov.spring.Car">
+        <constructor-arg name="engine" ref="turboEngine" />
+    </bean>
+
+    <bean id="mercedesBenz" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
+        <constructor-arg name="engine" ref="turboEngine" />
+    </bean>
+
+    <!-- setter based instantiations -->
+    <bean id="mercedesBenzExclusive" class="com.netcracker.adlitsov.spring.Car">
+        <property name="engine" ref="turboEngine" />
+    </bean>
 </beans>
