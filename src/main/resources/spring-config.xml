@@ -3,14 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="engineV8" class="com.netcracker.adlitsov.spring.EngineV8" />
-    <bean id="engineV16" class="com.netcracker.adlitsov.spring.EngineV16" />
+    <bean id="engineV8" class="com.netcracker.adlitsov.spring.EngineV8"/>
+    <bean id="engineV16" class="com.netcracker.adlitsov.spring.EngineV16" primary="true" />
     <bean id="turboEngine" class="com.netcracker.adlitsov.spring.TurboEngine" />
-    <bean id="airCooledVTwinEngine" class="com.netcracker.adlitsov.spring.EngineAirCooledVTwin" lazy-init="true"/>
+    <bean id="airCooledVTwinEngine" class="com.netcracker.adlitsov.spring.EngineAirCooledVTwin" />
 
     <!-- constructor based instantiations -->
-    <bean id="kalina" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
-        <constructor-arg index="0" ref="engineV8" />
+    <bean id="kalina" class="com.netcracker.adlitsov.spring.Car" scope="prototype" autowire="byType">
+        <!--<constructor-arg index="0" ref="engineV8" />-->
     </bean>
 
     <bean id="bmwX5" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
@@ -28,7 +28,7 @@
     <bean id="spectra2018" class="com.netcracker.adlitsov.spring.Bicycle" scope="prototype" />
 
     <!-- setter based instantiations -->
-    <bean id="mercedesBenzExclusive" class="com.netcracker.adlitsov.spring.Car">
-        <property name="engine" ref="turboEngine" />
+    <bean id="mercedesBenzExclusive" class="com.netcracker.adlitsov.spring.Car" autowire="byName">
+        <!--<property name="engine" ref="turboEngine" />-->
     </bean>
 </beans>

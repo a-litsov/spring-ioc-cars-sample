@@ -18,6 +18,12 @@ public class Car extends Vehicle {
         this.engine = engine;
     }
 
+    // Added only to test autowiring (to match bean name in spring-config.xml
+    public void setTurboEngine(Engine engine) {
+        System.out.println("Car.setEngine");
+        this.engine = engine;
+    }
+
     @Override
     public void drive() {
         System.out.println("Car.drive");
