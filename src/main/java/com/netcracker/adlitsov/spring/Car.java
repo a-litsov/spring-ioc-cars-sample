@@ -1,6 +1,6 @@
 package com.netcracker.adlitsov.spring;
 
-public class Car {
+public class Car extends Vehicle {
 
     private Engine engine;
 
@@ -16,6 +16,11 @@ public class Car {
     public void setEngine(Engine engine) {
         System.out.println("Car.setEngine");
         this.engine = engine;
+    }
+
+    @Override
+    public void drive() {
+        System.out.println("Car.drive");
     }
 
     @Override

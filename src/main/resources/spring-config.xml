@@ -6,19 +6,26 @@
     <bean id="engineV8" class="com.netcracker.adlitsov.spring.EngineV8" />
     <bean id="engineV16" class="com.netcracker.adlitsov.spring.EngineV16" />
     <bean id="turboEngine" class="com.netcracker.adlitsov.spring.TurboEngine" />
+    <bean id="airCooledVTwinEngine" class="com.netcracker.adlitsov.spring.EngineAirCooledVTwin" />
 
     <!-- constructor based instantiations -->
-    <bean id="kalina" class="com.netcracker.adlitsov.spring.Car">
+    <bean id="kalina" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
         <constructor-arg index="0" ref="engineV8" />
     </bean>
 
-    <bean id="bmwX5" class="com.netcracker.adlitsov.spring.Car">
+    <bean id="bmwX5" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
         <constructor-arg name="engine" ref="turboEngine" />
     </bean>
 
     <bean id="mercedesBenz" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
         <constructor-arg name="engine" ref="turboEngine" />
     </bean>
+
+    <bean id="yamahaBolt" class="com.netcracker.adlitsov.spring.Motorcycle" scope="prototype">
+        <constructor-arg name="engine" ref="airCooledVTwinEngine" />
+    </bean>
+
+    <bean id="spectra2018" class="com.netcracker.adlitsov.spring.Bicycle" scope="prototype" />
 
     <!-- setter based instantiations -->
     <bean id="mercedesBenzExclusive" class="com.netcracker.adlitsov.spring.Car">
