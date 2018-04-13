@@ -1,7 +1,7 @@
 package com.netcracker.adlitsov.spring;
 
 public class Motorcycle extends Vehicle {
-    private Engine engine;
+    private Engine myEngine;
 
     public Motorcycle() {
         System.out.println("Motorcycle.Motorcycle");
@@ -9,12 +9,12 @@ public class Motorcycle extends Vehicle {
 
     public Motorcycle(Engine engine) {
         System.out.println("Motorcycle.Motorcycle with engine");
-        this.engine = engine;
+        this.myEngine = engine;
     }
 
     public void setEngine(Engine engine) {
         System.out.println("Motorcycle.setEngine");
-        this.engine = engine;
+        this.myEngine = engine;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Motorcycle extends Vehicle {
     @Override
     public String toString() {
         return "Motorcycle#" + System.identityHashCode(this) + " {" +
-                "engine=" + engine +
+                "engine=" + myEngine +
                 '}';
     }
 }

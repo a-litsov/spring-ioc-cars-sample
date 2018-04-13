@@ -6,7 +6,7 @@
     <bean id="engineV8" class="com.netcracker.adlitsov.spring.EngineV8" />
     <bean id="engineV16" class="com.netcracker.adlitsov.spring.EngineV16" />
     <bean id="turboEngine" class="com.netcracker.adlitsov.spring.TurboEngine" />
-    <bean id="airCooledVTwinEngine" class="com.netcracker.adlitsov.spring.EngineAirCooledVTwin" />
+    <bean id="airCooledVTwinEngine" class="com.netcracker.adlitsov.spring.EngineAirCooledVTwin" lazy-init="true"/>
 
     <!-- constructor based instantiations -->
     <bean id="kalina" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
@@ -18,7 +18,7 @@
     </bean>
 
     <bean id="mercedesBenz" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
-        <constructor-arg name="engine" ref="turboEngine" />
+        <constructor-arg ref="turboEngine" />
     </bean>
 
     <bean id="yamahaBolt" class="com.netcracker.adlitsov.spring.Motorcycle" scope="prototype">
