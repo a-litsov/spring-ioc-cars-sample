@@ -25,7 +25,7 @@ public class Main {
     public static void main(String[] args) throws NoSuchFieldException {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 
-        String[] carNames = {"kalina", "bmwX5", "mercedesBenz", "mercedesBenzExclusive", "yamahaBolt", "spectra2018"};
+        String[] carNames = {"kalina", "bmwX5", "mercedesBenz", "mercedesBenzExclusive", "yamahaBolt", "spectra2018", "priora"};
 
         System.out.println("--- XML-based container configuration ---");
         showCars(context, carNames);

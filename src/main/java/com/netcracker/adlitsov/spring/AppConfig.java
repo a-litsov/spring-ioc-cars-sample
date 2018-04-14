@@ -8,8 +8,11 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
 
+    // That return type if scope could be "prototype" can lead to problems, because container knows real type(EngineV8)
+    // only when that bean instantiates.. and some singleton non-lazy instantiated beans that have dependency to EngineV8
+    // class won't work
     @Bean
-    public EngineV8 engineV8() {
+    public Engine engineV8() {
         return new EngineV8();
     }
 
@@ -32,6 +35,12 @@ public class AppConfig {
     @Bean
     @Scope("prototype")
     public Car kalina(Engine engine) {
+        return new Car(engine);
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Car priora(EngineV8 engine) {
         return new Car(engine);
     }
 

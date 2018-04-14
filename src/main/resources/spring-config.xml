@@ -13,6 +13,11 @@
         <!--<constructor-arg index="0" ref="engineV8" />-->
     </bean>
 
+    <bean id="priora" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
+            <constructor-arg name="engine" ref="engineV8" />
+    </bean>
+
+
     <bean id="bmwX5" class="com.netcracker.adlitsov.spring.Car" scope="prototype">
         <constructor-arg name="engine" ref="turboEngine" />
     </bean>
@@ -28,6 +33,7 @@
     <bean id="spectra2018" class="com.netcracker.adlitsov.spring.Bicycle" scope="prototype" />
 
     <!-- setter based instantiations -->
+    <!-- there is setter named setTurboEngine in Car class just to test this case -->
     <bean id="mercedesBenzExclusive" class="com.netcracker.adlitsov.spring.Car" autowire="byName">
         <!--<property name="engine" ref="turboEngine" />-->
     </bean>
